@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title Image Filtering Using Higher-Order Functions in JavaScript
+    link(rel='stylesheet', type='text/css', href='/css/style.css')
+    script(src='/js/jimp.min.js')
+    script(src='/js/higherOrderProcessor.js')
+    script(src='/js/default.js')
+  body
+    div
+      header.header
+        h1 Image Filtering Using Higher-Order Functions in JavaScript
+    div.img-container
+      img.img(id="src-img", src="/images/default.jpg")
+      img.img(id="processed-img", src="/images/default.jpg")
+    div.panel-container  
+      div.grid-1
+        label.btn(id="lbl", for='img-input') Open image
+        input(type="file", name="image", id="img-input", accept="image/*", onchange="changeSrcImg(this)")
+        div.grid-2
+          a.btn(onclick="sharpen(this)") Sharpen
+          a.btn(onclick="emboss(this)") Emboss
+          a.btn(onclick="edge(this)") Edge Detect
+          a.btn(onclick="outline(this)") Outline
+      div.grid-1
+        div.matrix-container
+          - for (let i = 0; i < 5; i++) { 
+            -  for (let j = 0; j < 5; j++){
+                input.matrix-input-box(type="number", id="matrix["+i+"]["+j+"]", value="0")
+            -  }
+          - }        
+        a.btn(onclick="custom(this)") Custom
