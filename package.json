@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "fs-web": "^1.0.1",
     "jimp": "^0.8.5",
     "nodemon": "^2.0.0",
